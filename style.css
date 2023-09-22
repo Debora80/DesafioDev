@@ -1,0 +1,155 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: var(--bg-url) no-repeat top center/cover;
+}
+:root{
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --surface: rgba(157, 31, 224, 0.148);
+  --border: rgba(255, 255, 255, 0.145);
+  --text-color: white;
+  --surface-hover:rgba(156, 31, 224, 0.147);
+  --border-hover: rgba(255, 255, 255, 0.041);
+  --bg-switch: url(./assets/moon-stars.svg); 
+}
+.light{
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --surface: rgba(54, 100, 69, 0.505); 
+  --border: rgba(0, 0, 0, 0.2);
+  --text-color: black; 
+  --surface-hover:rgba(54, 100, 69, 0.422);
+  --border-hover: rgba(0, 0, 0, 0.049);
+  --bg-switch: url(./assets/sun.svg);
+}
+#container{ 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 56px auto 0;
+  padding: 24px;
+  width: 100%;  
+  max-width: 356px;
+}
+#profile p{ 
+  margin: 8px auto 0; 
+  color: var(--text-color);
+}
+#switch{  
+  position: relative;
+  width: 64px;
+  margin: 24px auto 0px; 
+}
+#switch button{
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 9999px; 
+  background: white var(--bg-switch) no-repeat center;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); 
+  animation: slide-back 0.2s;
+}  
+#switch button:hover{  
+  outline: 8px solid var(--surface-hover);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.light #switch button{ 
+  animation: slide-in 0.4s forwards;
+}
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background-color: var(--surface); 
+}
+#social-links{  
+  display: flex;
+  margin: auto;
+  padding: 24px;   
+}
+#social-links a{ 
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: var(--text-color); 
+  font-size: 18px;
+  padding: 14px;
+  transition: background 0.2s; 
+  border-radius: 9999px; 
+}
+#social-links a:hover{   
+  border: 1px solid var(--border-hover);
+  background-color: var(--surface-hover); 
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);  
+}
+ul{
+  display: flex;
+  flex-direction: column; 
+  list-style: none;
+  gap: 16px;
+  padding: 0 24px;
+  
+}
+ul li a{ 
+  display: flex; 
+  padding: 24px; 
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-color);
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  border-radius: 9999px; 
+  transition: background 0.2s;
+} 
+ul li a:hover{
+  border: 1px solid var(--border-hover);
+  background-color: var(--surface-hover); 
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+footer{
+  padding: 24px;
+  color: var(--text-color);
+}
+footer a{
+  color: var(--text-color); 
+} 
+@media{
+  :root{
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+  .light{
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+} 
+@keyframes slide-in{
+  from{
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+@keyframes slide-back{
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
+  }
+}
+  
